@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Detail Produk | Second.id</title>
+
+    <!-- CSS homepage -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- CSS halaman detail -->
+    <link rel="stylesheet" href="css/product-detail.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <a class="brand" href="index.html">
+            Second<span>.id</span>
+        </a>
+
+        <nav class="main-nav">
+            <a href="index.html">Beranda</a>
+            <a href="index.html#kategori">Kategori</a>
+            <a href="index.html#tentang">Tentang</a>
+        </nav>
+
+        <div class="header-actions">
+            <a class="text-link" href="login.html">Masuk</a>
+            <a class="button button-dark button-small" href="upload.html">
+                Mulai Jual
+            </a>
+        </div>
+    </header>
+
+
+    <!-- KONTEN UTAMA -->
+    <main class="detail-container">
+
+        <a href="index.html#katalog" class="back-link">
+            ← Kembali ke katalog
+        </a>
+
+        <div class="detail-layout">
+
+            <!-- BAGIAN FOTO -->
+            <section class="detail-gallery">
+
+                <div class="main-photo">
+                    <img
+                        id="mainPhoto"
+                        src="images/lenovo.jpeg"
+                        alt="Laptop Lenovo ThinkPad"
+                    >
+                </div>
+
+                <div class="thumbnail-list">
+
+                    <button class="thumbnail active"
+                        data-image="images/laptop-1.jpg">
+                        <img src="lenovo.jpeg" alt="Foto laptop 1">
+                    </button>
+
+                    <button class="thumbnail"
+                        data-image="images/laptop-2.jpg">
+                        <img src="images/laptop-2.jpg" alt="Foto laptop 2">
+                    </button>
+
+                    <button class="thumbnail"
+                        data-image="images/laptop-3.jpg">
+                        <img src="images/laptop-3.jpg" alt="Foto laptop 3">
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- BAGIAN INFORMASI PRODUK -->
+            <section class="detail-info">
+
+                <p class="detail-category">ELEKTRONIK</p>
+
+                <h1>Laptop Lenovo ThinkPad</h1>
+
+                <p class="detail-price">Rp3.500.000</p>
+
+                <div class="detail-status">
+                    <span>Kondisi: <strong>Baik</strong></span>
+                    <span>Lokasi: <strong>Jakarta Selatan</strong></span>
+                </div>
+
+                <hr>
+
+                <div class="detail-description">
+                    <h3>Deskripsi Produk</h3>
+
+                    <p>
+                        Laptop Lenovo ThinkPad bekas yang masih
+                        berfungsi dengan baik dan terawat.
+                        Cocok digunakan untuk kegiatan perkuliahan,
+                        pemrograman, mengerjakan tugas, dan aktivitas
+                        lainnya.
+                    </p>
+                </div>
+
+                <hr>
+
+                <div class="detail-extra">
+                    <div>
+                        <span>ID Produk</span>
+                        <strong>PRD-001</strong>
+                    </div>
+
+                    <div>
+                        <span>Tanggal Upload</span>
+                        <strong>20 November 2026</strong>
+                    </div>
+
+                    <div>
+                        <span>Lokasi Pengambilan</span>
+                        <strong>Jakarta Selatan</strong>
+                    </div>
+                </div>
+
+                <hr>
+
+                <!-- INFORMASI PENJUAL -->
+                <div class="seller-information">
+
+                    <h3>Informasi Penjual</h3>
+
+                    <div class="seller-profile">
+
+                        <div class="seller-avatar">A</div>
+
+                        <div>
+                            <strong>Athirah Shabrina</strong>
+                            <span>Mahasiswa Aktif</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- TOMBOL KONTAK -->
+                <div id="contactArea">
+                    <button id="contactButton"
+                        class="button button-dark button-full">
+                        Hubungi Penjual →
+                    </button>
+                </div>
+
+                <p class="contact-note">
+                    Negosiasi, pembayaran, dan serah terima
+                    dilakukan langsung di luar platform.
+                </p>
+
+                <!-- TOMBOL LAPORKAN -->
+                <button id="reportButton" class="report-button">
+                    ⚑ Laporkan Produk
+                </button>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <a class="brand" href="index.html">
+            Second<span>.id</span>
+        </a>
+
+        <p>Student-to-Student Secondhand Marketplace</p>
+
+        <small>© 2026 Second.id · Project prototype</small>
+    </footer>
+
+
+    <script src="product-detail.js"></script>
+
+</body>
+</html>

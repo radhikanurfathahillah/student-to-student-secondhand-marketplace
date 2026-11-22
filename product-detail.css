@@ -1,0 +1,247 @@
+
+/* HALAMAN DETAIL PRODUK */
+
+.detail-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 45px 7.5% 80px;
+}
+
+.back-link {
+    display: inline-block;
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 28px;
+}
+
+.back-link:hover {
+    color: #111;
+}
+
+
+/* LAYOUT UTAMA */
+
+.detail-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 50px;
+    align-items: start;
+}
+
+
+/* GALERI FOTO */
+
+.main-photo {
+    width: 100%;
+    height: 460px;
+    background: #f2f2f2;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.main-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.thumbnail-list {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.thumbnail {
+    width: 85px;
+    height: 75px;
+    padding: 0;
+    background: #eee;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.thumbnail.active {
+    border: 2px solid #111;
+}
+
+
+/* INFORMASI PRODUK */
+
+.detail-category {
+    color: #888;
+    font-size: 10px;
+    letter-spacing: 1.8px;
+    margin: 0 0 12px;
+}
+
+.detail-info h1 {
+    font: 800 30px 'Manrope', sans-serif;
+    letter-spacing: -1px;
+    margin: 0 0 15px;
+}
+
+.detail-price {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.detail-status {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    font-size: 12px;
+    color: #777;
+}
+
+.detail-status strong {
+    color: #111;
+}
+
+
+/* GARIS PEMISAH */
+
+.detail-info hr {
+    border: none;
+    border-top: 1px solid #e8e8e8;
+    margin: 25px 0;
+}
+
+
+/* DESKRIPSI */
+
+.detail-info h3 {
+    font: 700 16px 'Manrope', sans-serif;
+    margin: 0 0 12px;
+}
+
+.detail-description p {
+    font-size: 13px;
+    line-height: 1.9;
+    color: #666;
+}
+
+
+/* INFORMASI TAMBAHAN */
+
+.detail-extra {
+    display: grid;
+    gap: 15px;
+}
+
+.detail-extra div {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    font-size: 12px;
+}
+
+.detail-extra span {
+    color: #888;
+}
+
+.detail-extra strong {
+    text-align: right;
+}
+
+
+/* PENJUAL */
+
+.seller-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.seller-avatar {
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.seller-profile strong,
+.seller-profile span {
+    display: block;
+    font-size: 13px;
+}
+
+.seller-profile span {
+    color: #888;
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+
+/* KONTAK */
+
+.contact-note {
+    text-align: center;
+    font-size: 11px;
+    line-height: 1.7;
+    color: #888;
+    margin-top: 12px;
+}
+
+.report-button {
+    display: block;
+    border: none;
+    background: transparent;
+    color: #888;
+    font-size: 12px;
+    cursor: pointer;
+    margin: 22px auto 0;
+}
+
+.report-button:hover {
+    color: #b42318;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width: 800px) {
+
+    .detail-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .main-photo {
+        height: 350px;
+    }
+
+    .detail-info h1 {
+        font-size: 25px;
+    }
+
+}
+
+@media(max-width: 480px) {
+
+    .detail-container {
+        padding: 30px 6% 55px;
+    }
+
+    .main-photo {
+        height: 280px;
+    }
+
+    .thumbnail {
+        width: 70px;
+        height: 65px;
+    }
+
+}
