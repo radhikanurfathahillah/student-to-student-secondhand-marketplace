@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barang Saya | Second.id</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="my-items.css">
+</head>
+<body>
+  <div data-component="navbar" data-active="my-items"></div>
+
+  <main class="page">
+    <div class="page-head">
+      <div>
+        <p class="eyebrow">DASHBOARD PENJUAL</p>
+        <h1>Barang saya</h1>
+        <p>Kelola barang yang sudah kamu unggah.</p>
+      </div>
+      <a class="button button-dark" href="login.html">+ Unggah barang</a>
+    </div>
+
+    <section class="summary" id="summary" aria-label="Ringkasan barang"></section>
+
+    <div class="filters" id="filters" aria-label="Filter status">
+      <button class="category-chip selected" data-status="all">Semua</button>
+      <button class="category-chip" data-status="pending">Pending</button>
+      <button class="category-chip" data-status="listed">Listed</button>
+      <button class="category-chip" data-status="rejected">Rejected</button>
+      <button class="category-chip" data-status="sold">Sold</button>
+      <button class="category-chip" data-status="deleted">Deleted</button>
+      <span class="muted" id="countText"></span>
+    </div>
+
+    <section class="item-list" id="itemList"></section>
+    <p class="empty-message" id="emptyMsg" hidden>Tidak ada barang dengan status ini.</p>
+  </main>
+
+  <div data-component="footer"></div>
+
+  <dialog id="editDialog">
+    <form class="modal" id="editForm" method="dialog">
+      <h2>Edit barang</h2>
+      <p id="editHint">Perubahan akan disimpan.</p>
+      <label class="field">Nama barang<input id="fName" required maxlength="60"></label>
+      <label class="field">Harga (Rp)<input id="fPrice" type="number" min="0" step="1000" required></label>
+      <label class="field">Kategori
+        <select id="fCategory">
+          <option>Elektronik</option><option>Buku</option><option>Perlengkapan Kuliah</option><option>Fashion</option><option>Lainnya</option>
+        </select>
+      </label>
+      <div class="modal-actions">
+        <button type="button" class="button button-outline button-small" data-close>Batal</button>
+        <button type="submit" class="button button-dark button-small" id="saveBtn">Simpan</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="confirmDialog">
+    <div class="modal">
+      <h2 id="cTitle"></h2>
+      <p id="cText"></p>
+      <div class="modal-actions">
+        <button class="button button-outline button-small" data-close>Batal</button>
+        <button class="button button-dark button-small" id="cOk">Ya, lanjutkan</button>
+      </div>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="components.js"></script>
+  <script src="my-items.js"></script>
+</body>
+</html>
