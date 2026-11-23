@@ -93,3 +93,27 @@ button,input{font:inherit}
 .info-strip{display:block}
 .info-strip p:last-child{margin-top:20px}
 .site-footer{justify-content:center;text-align:center;flex-direction:column;gap:5px}}
+
+.auth-page{min-height:100vh;background:#f6f6f6}
+.auth-header{background:#fff}
+.auth-main{max-width:1050px;margin:0 auto;padding:65px 30px 75px;display:grid;grid-template-columns:1fr 430px;gap:80px;align-items:center}
+.auth-intro h1{font-size:45px}
+.auth-intro>p:last-child{max-width:370px;color:#777;line-height:1.8;font-size:14px;margin-top:22px}
+.auth-card{background:#fff;border:1px solid #e6e6e6;border-radius:10px;padding:32px;box-shadow:0 12px 35px #00000008}
+.auth-card h2{font:700 23px 'Manrope';margin:0 0 7px}
+.auth-card>.muted{margin:0 0 24px}
+.auth-tabs{display:grid;grid-template-columns:1fr 1fr;background:#f3f3f3;padding:4px;border-radius:6px;margin-bottom:24px}
+.auth-tab{border:0;background:transparent;padding:10px;border-radius:5px;font-size:13px;color:#777;cursor:pointer}
+.auth-tab.active{background:#fff;color:#111;font-weight:700;box-shadow:0 1px 4px #00000012}
+#loginForm>label{display:block;font-size:12px;font-weight:600;margin:15px 0 8px}
+#loginForm>input{width:100%;height:44px;border:1px solid #ddd;border-radius:5px;padding:0 12px;outline:none;font-size:13px}
+#loginForm>input:focus{border-color:#555}
+.form-meta{display:flex;justify-content:space-between;align-items:center;margin:15px 0 20px;font-size:11px;color:#777}
+.remember{display:flex;align-items:center;gap:6px}
+.form-meta a{color:#333;font-weight:600}
+.form-message{font-size:12px;line-height:1.5;color:#555;min-height:16px}
+.auth-divider{display:flex;align-items:center;gap:12px;color:#999;font-size:10px;margin:18px 0}
+.auth-divider:before,.auth-divider:after{content:"";height:1px;background:#eee;flex:1}
+.auth-footnote{font-size:10px;line-height:1.6;color:#999;margin:20px 0 0}
+.auth-footer{background:#fff;justify-content:center;flex-direction:column;gap:5px}
+.auth-footer p,.auth-footer small{margin:0}
