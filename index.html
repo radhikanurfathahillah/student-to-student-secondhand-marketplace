@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Second.id | Student-to-Student Secondhand Marketplace</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="brand" href="index.html">Second<span>.id</span></a>
+    <nav class="main-nav">
+      <a class="active" href="index.html">Beranda</a>
+      <a href="#kategori">Kategori</a>
+      <a href="#tentang">Tentang</a>
+    </nav>
+    <div class="header-actions">
+      <a class="text-link" href="login.html">Masuk</a>
+      <a class="button button-dark button-small" href="login.html">Mulai Jual</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">STUDENT-TO-STUDENT MARKETPLACE</p>
+        <h1>Barang layak pakai,<br><span>kesempatan baru.</span></h1>
+        <p class="hero-description">Temukan barang second berkualitas dari mahasiswa dan alumni. Lebih hemat, lebih bermanfaat.</p>
+        <a class="button button-dark" href="#katalog">Jelajahi Barang <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <section class="search-section" aria-label="Pencarian barang">
+      <div class="search-box">
+        <span class="search-icon">⌕</span>
+        <input id="searchInput" type="search" placeholder="Cari laptop, buku, kalkulator..." aria-label="Cari barang">
+        <button id="searchButton" class="button button-dark button-small">Cari</button>
+      </div>
+    </section>
+
+    <section id="kategori" class="section-block">
+      <div class="section-heading">
+        <div><p class="eyebrow">JELAJAHI</p><h2>Kategori barang</h2></div>
+      </div>
+      <div class="category-list">
+        <button class="category-chip selected" data-category="Semua">Semua</button>
+        <button class="category-chip" data-category="Elektronik">Elektronik</button>
+        <button class="category-chip" data-category="Buku">Buku</button>
+        <button class="category-chip" data-category="Perlengkapan Kuliah">Perlengkapan Kuliah</button>
+        <button class="category-chip" data-category="Fashion">Fashion</button>
+        <button class="category-chip" data-category="Lainnya">Lainnya</button>
+      </div>
+    </section>
+
+    <section id="katalog" class="section-block catalog-section">
+      <div class="section-heading catalog-heading">
+        <div><p class="eyebrow">PILIHAN KOMUNITAS</p><h2>Temukan barang</h2></div>
+        <span id="resultCount" class="muted">6 barang</span>
+      </div>
+      <div id="productGrid" class="product-grid">
+        <article class="product-card" data-category="Elektronik" data-name="Laptop Lenovo ThinkPad">
+          <div class="product-visual"><span>ELEKTRONIK</span></div>
+          <div class="product-info"><p class="product-category">Elektronik</p><h3>Laptop Lenovo ThinkPad</h3><p class="product-condition">Kondisi baik · Jakarta Selatan</p><div class="product-bottom"><strong>Rp3.500.000</strong><a href="login.html" aria-label="Lihat detail Laptop Lenovo ThinkPad">Lihat </a></div></div>
+        </article>
+        <article class="product-card" data-category="Buku" data-name="Paket Buku Pemrograman">
+          <div class="product-visual"><span>BUKU</span></div>
+          <div class="product-info"><p class="product-category">Buku</p><h3>Paket Buku Pemrograman</h3><p class="product-condition">Sangat baik · Depok</p><div class="product-bottom"><strong>Rp85.000</strong><a href="login.html">Lihat </a></div></div>
+        </article>
+        <article class="product-card" data-category="Perlengkapan Kuliah" data-name="Scientific Calculator">
+          <div class="product-visual"><span>PERLENGKAPAN KULIAH</span></div>
+          <div class="product-info"><p class="product-category">Perlengkapan Kuliah</p><h3>Scientific Calculator</h3><p class="product-condition">Normal · Jakarta Timur</p><div class="product-bottom"><strong>Rp95.000</strong><a href="login.html">Lihat </a></div></div>
+        </article>
+        <article class="product-card" data-category="Elektronik" data-name="Headphone Wireless">
+          <div class="product-visual"><span>ELEKTRONIK</span></div>
+          <div class="product-info"><p class="product-category">Elektronik</p><h3>Headphone Wireless</h3><p class="product-condition">Baik · Tangerang</p><div class="product-bottom"><strong>Rp175.000</strong><a href="login.html">Lihat </a></div></div>
+        </article>
+        <article class="product-card" data-category="Fashion" data-name="Tas Ransel Kuliah">
+          <div class="product-visual"><span>FASHION</span></div>
+          <div class="product-info"><p class="product-category">Fashion</p><h3>Tas Ransel Kuliah</h3><p class="product-condition">Baik · Bekasi</p><div class="product-bottom"><strong>Rp120.000</strong><a href="login.html">Lihat </a></div></div>
+        </article>
+        <article class="product-card" data-category="Lainnya" data-name="Desk Lamp Minimalis">
+          <div class="product-visual"><span>LAINNYA</span></div>
+          <div class="product-info"><p class="product-category">Lainnya</p><h3>Desk Lamp Minimalis</h3><p class="product-condition">Sangat baik · Depok</p><div class="product-bottom"><strong>Rp60.000</strong><a href="login.html">Lihat </a></div></div>
+        </article>
+      </div>
+      <p id="emptyMessage" class="empty-message" hidden>Barang tidak ditemukan. Coba kata kunci atau kategori lain.</p>
+    </section>
+
+    <section id="tentang" class="info-strip">
+      <div><h2>Transaksi tetap<br>di tangan pengguna.</h2></div>
+      <p>Second.id mempertemukan penjual dan calon pembeli. Negosiasi, pembayaran, dan serah terima barang dilakukan langsung antara pengguna di luar platform.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="brand" href="index.html">Second<span>.id</span></a><p>Student-to-Student Secondhand Marketplace</p><small>© 2026 Second.id · Project prototype</small></footer>
+  <script src="main.js"></script>
+</body>
+</html>

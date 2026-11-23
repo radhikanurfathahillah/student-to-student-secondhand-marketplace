@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Second.id</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-body">
+
+  <div class="admin-layout">
+    <aside class="admin-sidebar" aria-label="Navigasi admin">
+      <a class="brand" href="index.html">Second<span>.id</span></a>
+      <p class="sidebar-label">ADMIN PANEL</p>
+      <nav class="sidebar-nav" id="sidebarNav">
+        <button class="nav-item active" data-view="overview">Overview</button>
+        <button class="nav-item" data-view="pending-products">Pending Products <span class="badge" id="badgePendingProducts">0</span></button>
+        <button class="nav-item" data-view="pending-users">Pending Users <span class="badge" id="badgePendingUsers">0</span></button>
+        <button class="nav-item" data-view="listed-products">Listed Products</button>
+        <button class="nav-item" data-view="users">User Management</button>
+        <button class="nav-item" data-view="categories">Category Management</button>
+        <button class="nav-item" data-view="reports">Reports <span class="badge" id="badgeReports">0</span></button>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="index.html">← Lihat website</a>
+        <a href="login.html">Keluar</a>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <header class="admin-topbar">
+        <div>
+          <p class="eyebrow">ADMIN DASHBOARD</p>
+          <h1 id="viewTitle">Overview</h1>
+        </div>
+        <div class="admin-profile"><span class="avatar">A</span><div><strong>Admin Second.id</strong><small>Moderator</small></div></div>
+      </header>
+
+      <p class="sim-note">Mode prototype: keputusan admin pada halaman ini hanya simulasi dan tidak tersimpan permanen.</p>
+
+      <!-- OVERVIEW -->
+      <section class="view" id="view-overview">
+        <div class="stat-grid" id="statGrid"></div>
+        <div class="two-col">
+          <div class="panel">
+            <div class="panel-head"><h2>Produk menunggu moderasi</h2><button class="link-btn" data-goto="pending-products">Lihat semua</button></div>
+            <div id="overviewProducts"></div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><h2>Akun menunggu verifikasi</h2><button class="link-btn" data-goto="pending-users">Lihat semua</button></div>
+            <div id="overviewUsers"></div>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h2>Aktivitas terbaru</h2></div>
+          <ul class="activity" id="activityList"></ul>
+        </div>
+      </section>
+
+      <!-- PENDING PRODUCTS -->
+      <section class="view" id="view-pending-products" hidden>
+        <div class="panel"><div class="table-wrap"><table>
+          <thead><tr><th>Produk</th><th>Kategori</th><th>Harga</th><th>Penjual</th><th>Diunggah</th><th class="right">Aksi</th></tr></thead>
+          <tbody id="tbodyPendingProducts"></tbody>
+        </table></div><p class="empty" id="emptyPendingProducts" hidden>Tidak ada produk yang menunggu moderasi.</p></div>
+      </section>
+
+      <!-- PENDING USERS -->
+      <section class="view" id="view-pending-users" hidden>
+        <div class="panel"><div class="table-wrap"><table>
+          <thead><tr><th>Nama</th><th>Status</th><th>NIM</th><th>Universitas</th><th>Daftar</th><th class="right">Aksi</th></tr></thead>
+          <tbody id="tbodyPendingUsers"></tbody>
+        </table></div><p class="empty" id="emptyPendingUsers" hidden>Tidak ada akun yang menunggu verifikasi.</p></div>
+      </section>
+
+      <!-- LISTED PRODUCTS -->
+      <section class="view" id="view-listed-products" hidden>
+        <div class="toolbar"><input id="listedSearch" type="search" placeholder="Cari produk tayang..." aria-label="Cari produk tayang"></div>
+        <div class="panel"><div class="table-wrap"><table>
+          <thead><tr><th>Produk</th><th>Kategori</th><th>Harga</th><th>Penjual</th><th>Status</th><th class="right">Aksi</th></tr></thead>
+          <tbody id="tbodyListed"></tbody>
+        </table></div><p class="empty" id="emptyListed" hidden>Produk tidak ditemukan.</p></div>
+      </section>
+
+      <!-- USER MANAGEMENT -->
+      <section class="view" id="view-users" hidden>
+        <div class="toolbar">
+          <input id="userSearch" type="search" placeholder="Cari nama, email, atau NIM..." aria-label="Cari pengguna">
+          <select id="userFilter" aria-label="Filter status verifikasi">
+            <option value="Semua">Semua status</option>
+            <option value="verified">Terverifikasi</option>
+            <option value="pending">Menunggu</option>
+            <option value="rejected">Ditolak</option>
+            <option value="suspended">Dinonaktifkan</option>
+          </select>
+        </div>
+        <div class="panel"><div class="table-wrap"><table>
+          <thead><tr><th>Nama</th><th>Email</th><th>Status</th><th>Verifikasi</th><th class="right">Aksi</th></tr></thead>
+          <tbody id="tbodyUsers"></tbody>
+        </table></div><p class="empty" id="emptyUsers" hidden>Pengguna tidak ditemukan.</p></div>
+      </section>
+
+      <!-- CATEGORIES -->
+      <section class="view" id="view-categories" hidden>
+        <div class="toolbar"><button class="button button-dark button-small" data-action="add-category">+ Tambah kategori</button></div>
+        <div class="panel"><div class="table-wrap"><table>
+          <thead><tr><th>Nama kategori</th><th>Jumlah produk tayang</th><th class="right">Aksi</th></tr></thead>
+          <tbody id="tbodyCategories"></tbody>
+        </table></div></div>
+      </section>
+
+      <!-- REPORTS -->
+      <section class="view" id="view-reports" hidden>
+        <div class="toolbar">
+          <select id="reportFilter" aria-label="Filter laporan">
+            <option value="Semua">Semua laporan</option>
+            <option value="Baru">Baru</option>
+            <option value="Ditangani">Ditangani</option>
+          </select>
+        </div>
+        <div class="panel"><div class="table-wrap"><table>
+          <thead><tr><th>ID</th><th>Jenis</th><th>Target</th><th>Pelapor</th><th>Status</th><th class="right">Aksi</th></tr></thead>
+          <tbody id="tbodyReports"></tbody>
+        </table></div><p class="empty" id="emptyReports" hidden>Tidak ada laporan.</p></div>
+      </section>
+    </main>
+  </div>
+
+  <!-- MODAL -->
+  <div class="modal-backdrop" id="modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head"><h2 id="modalTitle"></h2><button class="modal-close" id="modalClose" aria-label="Tutup">×</button></div>
+      <div class="modal-body" id="modalBody"></div>
+      <div class="modal-foot" id="modalFoot"></div>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status" hidden></div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
