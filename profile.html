@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Saya | Second.id</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="account.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">Second<span>.id</span></a>
+    <nav class="main-nav">
+      <a href="index.html">Beranda</a>
+      <a href="index.html#kategori">Kategori</a>
+      <a href="index.html#tentang">Tentang</a>
+    </nav>
+    <div class="header-actions">
+      <a class="text-link active" href="profile.html">Profil</a>
+      <a class="button button-dark button-small" href="index.html">Keluar</a>
+    </div>
+  </header>
+
+  <main class="acc-main">
+    <aside class="acc-intro">
+      <p class="eyebrow">AKUN SAYA</p>
+      <h1>Profil <span>pengguna.</span></h1>
+      <p>Kelola data diri, nomor WhatsApp penjual, dan keamanan akunmu. Data diverifikasi admin sebelum fitur penuh aktif.</p>
+      <div class="demo-bar">
+        <label for="demoStatus">Simulasi status verifikasi:</label>
+        <select id="demoStatus">
+          <option value="pending">Menunggu</option>
+          <option value="verified">Terverifikasi</option>
+          <option value="rejected">Ditolak</option>
+        </select>
+      </div>
+    </aside>
+
+    <div>
+      <div id="verifNotice"></div>
+
+      <!-- Informasi profil -->
+      <section class="acc-card" id="viewCard">
+        <div class="profile-head">
+          <div>
+            <div class="avatar" id="avatar" aria-label="Foto profil">AB</div>
+            <div class="avatar-actions"><label class="link-btn" for="avatarInput" style="cursor:pointer">Ganti foto</label><input type="file" id="avatarInput" accept=".jpg,.jpeg,.png" hidden></div>
+          </div>
+          <div>
+            <h2 id="pName">—</h2>
+            <div class="badges">
+              <span class="badge" id="pStatus">—</span>
+              <span class="badge" id="pVerif">—</span>
+            </div>
+          </div>
+        </div>
+
+        <dl class="info-list">
+          <div><dt>NIM</dt><dd id="pNim">—</dd></div>
+          <div><dt id="pTahunLabel">Tahun masuk</dt><dd id="pTahun">—</dd></div>
+          <div><dt>Universitas</dt><dd id="pUniv">—</dd></div>
+          <div><dt>Program studi</dt><dd id="pProdi">—</dd></div>
+          <div><dt>Email</dt><dd id="pEmail">—</dd></div>
+          <div><dt>WhatsApp penjual</dt><dd id="pWa">—</dd></div>
+        </dl>
+        <div class="card-actions"><button class="button button-dark" id="editBtn">Edit Profil</button></div>
+      </section>
+
+      <!-- Form edit -->
+      <section class="acc-card" id="editCard" hidden>
+        <h2>Edit profil</h2>
+        <p class="sub">NIM dan status tidak bisa diubah langsung. Gunakan pengajuan perubahan status di bawah.</p>
+        <form id="editForm" novalidate>
+          <div class="field" id="e-nama"><label for="eNama">Nama lengkap</label><input type="text" id="eNama"><p class="error-text"></p></div>
+          <div class="field" id="e-univ"><label for="eUniv">Universitas</label><input type="text" id="eUniv"><p class="error-text"></p></div>
+          <div class="field" id="e-prodi"><label for="eProdi">Program studi</label><input type="text" id="eProdi"><p class="error-text"></p></div>
+          <div class="field" id="e-email"><label for="eEmail">Email</label><input type="email" id="eEmail"><p class="error-text"></p></div>
+          <div class="field" id="e-wa"><label for="eWa">Nomor WhatsApp <span class="hint">· untuk dihubungi pembeli</span></label><input type="tel" id="eWa" placeholder="08xxxxxxxxxx"><p class="error-text"></p></div>
+          <div class="card-actions">
+            <button type="submit" class="button button-dark">Simpan Perubahan</button>
+            <button type="button" class="button button-outline" id="cancelEdit">Batal</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Dokumen verifikasi -->
+      <section class="acc-card">
+        <h2>Dokumen verifikasi</h2>
+        <p class="sub">Dokumen yang kamu unggah saat registrasi.</p>
+        <div class="doc-box">
+          <div><b id="docName">—</b><small id="docMeta">—</small></div>
+          <span class="badge" id="docBadge">—</span>
+        </div>
+      </section>
+
+      <!-- Pengaturan akun -->
+      <section class="acc-card">
+        <h2>Pengaturan akun</h2>
+        <p class="sub">Keamanan dan status akun.</p>
+        <div class="card-actions" style="margin-top:0">
+          <button class="button button-outline" id="pwOpen">Ubah Password</button>
+          <button class="button button-outline" id="statusOpen">Ajukan Perubahan Status</button>
+        </div>
+
+        <form id="pwForm" class="panel" hidden novalidate style="margin-top:26px">
+          <div class="field" id="p-old"><label for="pOld">Password lama</label><div class="pw-wrap"><input type="password" id="pOld" autocomplete="current-password"><button type="button" class="pw-toggle" data-target="pOld" aria-label="Tampilkan password lama">Tampil</button></div><p class="error-text"></p></div>
+          <div class="field" id="p-new"><label for="pNew">Password baru</label><div class="pw-wrap"><input type="password" id="pNew" autocomplete="new-password"><button type="button" class="pw-toggle" data-target="pNew" aria-label="Tampilkan password baru">Tampil</button></div><p class="error-text"></p></div>
+          <div class="field" id="p-conf"><label for="pConf">Konfirmasi password baru</label><div class="pw-wrap"><input type="password" id="pConf" autocomplete="new-password"><button type="button" class="pw-toggle" data-target="pConf" aria-label="Tampilkan konfirmasi">Tampil</button></div><p class="error-text"></p></div>
+          <div class="card-actions"><button type="submit" class="button button-dark">Simpan Password</button><button type="button" class="button button-outline" data-close="pwForm">Batal</button></div>
+        </form>
+
+        <form id="statusForm" class="panel" hidden novalidate style="margin-top:26px">
+          <div class="field" id="s-new"><label for="sNew">Status baru</label><select id="sNew"></select><p class="error-text"></p></div>
+          <div class="field" id="s-reason"><label for="sReason">Alasan pengajuan</label><input type="text" id="sReason" placeholder="Contoh: Saya sudah lulus pada 2026"><p class="error-text"></p></div>
+          <div class="field" id="s-doc"><span class="label">Dokumen pendukung <span class="hint">· PDF/JPG/PNG, maks. 5 MB</span></span><label class="file-drop"><input type="file" id="sDoc" accept=".pdf,.jpg,.jpeg,.png"><span class="btn-look">Pilih file</span><span class="file-name" id="sFileName">Belum ada file dipilih</span></label><p class="error-text"></p></div>
+          <div class="card-actions"><button type="submit" class="button button-dark">Kirim Pengajuan</button><button type="button" class="button button-outline" data-close="statusForm">Batal</button></div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <footer class="site-footer"><a class="brand" href="index.html">Second<span>.id</span></a><p>Student-to-Student Secondhand Marketplace</p><small>© 2026 Second.id · Project prototype</small></footer>
+  <script src="profile.js"></script>
+</body>
+</html>

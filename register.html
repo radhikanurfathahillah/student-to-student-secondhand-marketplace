@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar | Second.id</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="account.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">Second<span>.id</span></a>
+    <nav class="main-nav">
+      <a href="index.html">Beranda</a>
+      <a href="index.html#kategori">Kategori</a>
+      <a href="index.html#tentang">Tentang</a>
+    </nav>
+    <div class="header-actions">
+      <a class="text-link" href="login.html">Masuk</a>
+      <a class="button button-dark button-small" href="register.html">Daftar</a>
+    </div>
+  </header>
+
+  <main class="acc-main">
+    <aside class="acc-intro">
+      <p class="eyebrow">BUAT AKUN</p>
+      <h1>Bergabung dengan <span>komunitas kampus.</span></h1>
+      <p>Second.id khusus untuk mahasiswa aktif dan alumni. Kami meminta bukti status agar jual-beli tetap aman dan terpercaya.</p>
+      <ol class="acc-steps">
+        <li><strong>Isi data diri</strong>Sesuai status kamu saat ini.</li>
+        <li><strong>Unggah dokumen bukti</strong>KTM, ijazah, atau surat alumni.</li>
+        <li><strong>Tunggu verifikasi admin</strong>Akun aktif penuh setelah disetujui.</li>
+      </ol>
+    </aside>
+
+    <section class="acc-card">
+      <div id="successBox" class="panel" hidden>
+        <div class="notice notice-wait" role="status">
+          <strong>Pendaftaran berhasil dikirim</strong>
+          Akun kamu sedang menunggu verifikasi admin. Kami akan memeriksa dokumen buktimu. Selama menunggu, kamu bisa melihat profil dengan status <b>Menunggu verifikasi</b>.
+        </div>
+        <div class="card-actions">
+          <a class="button button-dark" href="profile.html">Lihat Profil</a>
+          <a class="button button-outline" href="index.html">Ke Beranda</a>
+        </div>
+      </div>
+
+      <form id="registerForm" novalidate>
+        <h2>Registrasi akun</h2>
+        <p class="sub">Semua kolom wajib diisi.</p>
+
+        <div class="field" id="f-status">
+          <span class="label">Status pengguna</span>
+          <div class="seg-group">
+            <label class="seg"><input type="radio" name="status" value="mahasiswa" checked><span>Mahasiswa aktif<small>Sedang kuliah</small></span></label>
+            <label class="seg"><input type="radio" name="status" value="alumni"><span>Alumni<small>Sudah lulus</small></span></label>
+          </div>
+        </div>
+
+        <div class="field" id="f-nama">
+          <label for="nama">Nama lengkap</label>
+          <input type="text" id="nama" name="nama" autocomplete="name" placeholder="Nama sesuai identitas">
+          <p class="error-text"></p>
+        </div>
+
+        <div class="field-row">
+          <div class="field" id="f-nim">
+            <label for="nim" id="nimLabel">NIM</label>
+            <input type="text" id="nim" name="nim" inputmode="numeric" placeholder="Contoh: 2210511001">
+            <p class="error-text"></p>
+          </div>
+          <div class="field" id="f-tahun">
+            <label for="tahun" id="tahunLabel">Tahun masuk</label>
+            <input type="number" id="tahun" name="tahun" placeholder="Contoh: 2022">
+            <p class="error-text"></p>
+          </div>
+        </div>
+
+        <div class="field" id="f-univ">
+          <label for="univ">Universitas</label>
+          <input type="text" id="univ" name="univ" placeholder="Nama perguruan tinggi">
+          <p class="error-text"></p>
+        </div>
+
+        <div class="field" id="f-prodi">
+          <label for="prodi">Program studi</label>
+          <input type="text" id="prodi" name="prodi" placeholder="Contoh: Sistem Informasi">
+          <p class="error-text"></p>
+        </div>
+
+        <div class="field" id="f-email">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" placeholder="nama@email.com">
+          <p class="error-text"></p>
+        </div>
+
+        <div class="field-row">
+          <div class="field" id="f-password">
+            <label for="password">Password</label>
+            <div class="pw-wrap">
+              <input type="password" id="password" name="password" autocomplete="new-password" placeholder="Minimal 8 karakter">
+              <button type="button" class="pw-toggle" data-target="password" aria-label="Tampilkan password">Tampil</button>
+            </div>
+            <p class="error-text"></p>
+          </div>
+          <div class="field" id="f-confirm">
+            <label for="confirm">Konfirmasi password</label>
+            <div class="pw-wrap">
+              <input type="password" id="confirm" name="confirm" autocomplete="new-password" placeholder="Ulangi password">
+              <button type="button" class="pw-toggle" data-target="confirm" aria-label="Tampilkan konfirmasi password">Tampil</button>
+            </div>
+            <p class="error-text"></p>
+          </div>
+        </div>
+
+        <div class="field" id="f-doc">
+          <span class="label" id="docLabel">Dokumen bukti (KTM) <span class="hint">· PDF, JPG, atau PNG, maks. 5 MB</span></span>
+          <label class="file-drop">
+            <input type="file" id="doc" name="doc" accept=".pdf,.jpg,.jpeg,.png">
+            <span class="btn-look">Pilih file</span>
+            <span class="file-name" id="fileName">Belum ada file dipilih</span>
+          </label>
+          <p class="error-text"></p>
+        </div>
+
+        <div class="field" id="f-agree">
+          <label class="check">
+            <input type="checkbox" id="agree" name="agree">
+            <span>Saya menyetujui <a href="#" onclick="return false">Syarat &amp; Ketentuan</a> dan <a href="#" onclick="return false">Kebijakan Privasi</a> Second.id.</span>
+          </label>
+          <p class="error-text"></p>
+        </div>
+
+        <button type="submit" class="button button-dark button-full">Daftar Sekarang</button>
+        <p class="form-foot">Sudah punya akun? <a href="login.html">Masuk</a></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="brand" href="index.html">Second<span>.id</span></a><p>Student-to-Student Secondhand Marketplace</p><small>© 2026 Second.id · Project prototype</small></footer>
+  <script src="register.js"></script>
+</body>
+</html>
